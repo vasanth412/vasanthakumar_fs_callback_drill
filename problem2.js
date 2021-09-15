@@ -6,7 +6,7 @@ const filePath = 'output2/filenames.txt';
 fs.writeFileSync(path.join(__dirname, filePath), '');
 
 function cb() {
-  fs.readFile(path.join(__dirname, 'lipsum.txt'), 'utf8', callback1);
+  fs.readFile(path.join(__dirname, 'lipsum.txt'), 'utf-8', callback1);
 }
 
 function callback1(err, data) {
