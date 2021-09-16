@@ -52,7 +52,7 @@ function callback3(err, data) {
     .replace(/[\n]+/g, ' ')
     .trim()
     .split(' ');
-  data = data.sort();
+  data = data.sort().join(' ');
   fs.appendFileSync(path.join(__dirname, filePath), `sort.txt`);
   fs.writeFile(path.join(__dirname, '/output2/sort.txt'), `${data}`, sort);
 }
