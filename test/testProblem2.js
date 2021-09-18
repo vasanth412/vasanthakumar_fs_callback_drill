@@ -1,3 +1,3 @@
-const cb = require('../problem2');
+const getPromise = require('../problem2');
 
-cb();
+getPromise();

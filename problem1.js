@@ -9,14 +9,15 @@ function RandomFile(number) {
     }
 
     const path = `../output1/random${file}.json`;
-
-    fs.writeFile(path, JSON.stringify(stringName), (error) => {
-      console.log(`File created...!`);
-
-      fs.unlink(path, () => {
-        console.log(`File deleted...!`);
-      });
-    });
+    const data = JSON.stringify(stringName);
+    fs.promises
+      .writeFile(path, data)
+      .then(() => {
+        console.log(`File created...! ${file}`);
+        fs.promises.unlink(path);
+      })
+      .then(() => console.log(`File deleted...! ${file}`))
+      .catch((err) => console.log('Error'));
   }
 }
 
