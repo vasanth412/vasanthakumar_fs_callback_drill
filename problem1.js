@@ -10,7 +10,7 @@ function RandomFile(number) {
 
     const path = `../output1/random${file}.json`;
 
-    fs.writeFile(path, JSON.stringify(stringName), (error) => {
+    fs.writeFile(path, JSON.stringify(stringName), () => {
       console.log(`File created...!`);
 
       fs.unlink(path, () => {
