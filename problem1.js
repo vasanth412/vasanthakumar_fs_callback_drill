@@ -17,7 +17,7 @@ function RandomFile(number) {
         fs.promises.unlink(path);
       })
       .then(() => console.log(`File deleted...! ${file}`))
-      .catch((err) => console.log('Error'));
+      .catch((err) => console.log('Error' + err));
   }
 }
 
